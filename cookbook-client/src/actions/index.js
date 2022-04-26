@@ -5,6 +5,11 @@ export const recipeData= async(search)=>{
     return response
 }
 
+export const imageData=async(search)=>{
+    console.log(process.env.REACT_APP_U_API_KEY)
+    const resp= await axios.get(`https://api.unsplash.com/search/photos?query=${search}&client_id=${process.env.REACT_APP_U_API_KEY}`)
+    return resp
+}
 
 
 
